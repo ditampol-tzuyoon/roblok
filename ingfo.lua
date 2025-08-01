@@ -127,8 +127,8 @@ function SendOrEditWebhook()
         color = tonumber("0x2ECC71"),
         fields = {
             {name = "--- Info ---", value = "👤 " .. string.upper(data.DisplayName) .. " **[" .. data.Username .. "]**\n💰 " .. data.Sheckles, inline = false},
-            {name = "--- Pets ---", value = data.Pets, inline = true},
-            {name = "--- Eggs ---", value = data.Eggs, inline = true}
+            {name = "--- Eggs ---", value = data.Eggs, inline = true},
+            {name = "--- Pets ---", value = data.Pets, inline = true}
         },
         footer = {text = "Script by Erine"},
         timestamp = os.date("!%Y-%m-%dT%H:%M:%S.000Z")
