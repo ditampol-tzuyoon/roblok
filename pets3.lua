@@ -140,7 +140,7 @@ else
             GUI.cyclesLabel.Text="Siklus Selesai: "..cyclesCompleted
             
             if botActive then
-                if petTuaUUID and timerText:upper() == "READY" then
+                if petTuaUUID and (timerText:upper() == "READY" or timerText == "") then
                     botActive = false
                     print("Kondisi terpenuhi. Memulai siklus...")
                     
