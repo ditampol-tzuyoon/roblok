@@ -4,18 +4,22 @@ function UpdateApiData(isOnline)
     if not player then return end
     local inventoryData = GatherInventoryData()
     local leaderstats = player:WaitForChild("leaderstats")
+    print("F")
     local payload = {
         username = player.Name, displayName = player.DisplayName, userId = player.UserId,
         sheckles = leaderstats and leaderstats:FindFirstChild("Sheckles") and leaderstats.Sheckles.Value or 0,
         lastUpdate = os.time(), inventory = inventoryData, hasOnline = isOnline
     }
+    print("G")
     local jsonPayload = HttpService:JSONEncode(payload)
     local requestData = {
         Url = DataAPI, Method = "POST",
         Headers = {["Content-Type"] = "application/json", ["X-Access-Key"] = accessKey},
         Body = jsonPayload
     }
+    print("H")
     local success, response = pcall(function() return requestFunc(requestData) end)
+    print("I")
     if not success then
         print("Gagal kirim data: " .. tostring(response))
     end
@@ -23,8 +27,11 @@ end
 
 function ApiUpdateLoop()
     while apiLoopActive do
+        print("C")
         if DataAPI and string.find(DataAPI, "http") then
+            print("D")
             UpdateApiData(true)
+            print("E")
             if apiLoopActive then task.wait(updateInterval) end
         else
             apiLoopActive = false
@@ -33,12 +40,14 @@ function ApiUpdateLoop()
 end
 
 function RunningAPI(state)
+    print(DataAPI)
+    print(accessKey)
+    print(getgenv().key)
     apiLoopActive=state;
+    print("A")
     if state==true then 
+        print("B")
         if not (DataAPI and DataAPI:find("http")) or accessKey=="" then
-            print(DataAPI)
-            print(accessKey)
-            print(getgenv().key)
             warn("KONFIGURASI API/KEY TIDAK VALID.")
             apiLoopActive=false
             return
