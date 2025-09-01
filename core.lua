@@ -1,8 +1,14 @@
 function UpdateApiData(isOnline)
+    print("A")
+    print(isOnline)
     local requestFunc = http_request or request or syn.request
+    print("B")
     if not requestFunc then warn("Error: Fungsi http request tidak ditemukan."); apiLoopActive = false; return end
+    print("C")
     if not player then return end
+    print("D")
     local inventoryData = GatherInventoryData()
+    print("E")
     local leaderstats = player:WaitForChild("leaderstats")
     print("F")
     local payload = {
@@ -17,9 +23,7 @@ function UpdateApiData(isOnline)
         Headers = {["Content-Type"] = "application/json", ["X-Access-Key"] = accessKey},
         Body = jsonPayload
     }
-    print("H")
     local success, response = pcall(function() return requestFunc(requestData) end)
-    print("I")
     if not success then
         print("Gagal kirim data: " .. tostring(response))
     end
@@ -27,11 +31,8 @@ end
 
 function ApiUpdateLoop()
     while apiLoopActive do
-        print("C")
         if DataAPI and string.find(DataAPI, "http") then
-            print("D")
             UpdateApiData(true)
-            print("E")
             if apiLoopActive then task.wait(updateInterval) end
         else
             apiLoopActive = false
@@ -44,9 +45,7 @@ function RunningAPI(state)
     print(accessKey)
     print(getgenv().key)
     apiLoopActive=state;
-    print("A")
     if state==true then 
-        print("B")
         if not (DataAPI and DataAPI:find("http")) or accessKey=="" then
             warn("KONFIGURASI API/KEY TIDAK VALID.")
             apiLoopActive=false
