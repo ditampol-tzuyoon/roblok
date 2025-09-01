@@ -146,9 +146,6 @@ function ApiUpdateLoop()
 end
 
 function RunningAPI(state)
-    print(DataAPI)
-    print(accessKey)
-    print(getgenv().key)
     apiLoopActive=state;
     if state==true then 
         if not (DataAPI and DataAPI:find("http")) or accessKey=="" then
