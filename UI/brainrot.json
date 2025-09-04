@@ -1,0 +1,657 @@
+{
+  "Noobini Pizzanini": {
+    "DisplayName": "Noobini Pizzanini",
+    "Rarity": "Common",
+    "Price": 25
+  },
+  "Lirilì Larilà": {
+    "DisplayName": "Lirilì Larilà",
+    "Rarity": "Common",
+    "Price": 250
+  },
+  "Tim Cheese": {
+    "DisplayName": "Tim Cheese",
+    "Rarity": "Common",
+    "Price": 500
+  },
+  "Fluriflura": {
+    "DisplayName": "Fluriflura",
+    "Rarity": "Common",
+    "Price": 750
+  },
+  "Svinina Bombardino": {
+    "DisplayName": "Svinina Bombardino",
+    "Rarity": "Common",
+    "Price": 1250
+  },
+  "Talpa Di Fero": {
+    "DisplayName": "Talpa Di Fero",
+    "Rarity": "Common",
+    "Price": 1000
+  },
+  "Pipi Kiwi": {
+    "DisplayName": "Pipi Kiwi",
+    "Rarity": "Common",
+    "Price": 1500
+  },
+  "Pipi Corni": {
+    "DisplayName": "Pipi Corni",
+    "Rarity": "Common",
+    "Price": 1750
+  },
+  "Raccooni Jandelini": {
+    "DisplayName": "Raccooni Jandelini",
+    "Rarity": "Common",
+    "Price": 1350
+  },
+  "Trippi Troppi": {
+    "DisplayName": "Trippi Troppi",
+    "Rarity": "Rare",
+    "Price": 2000
+  },
+  "Tung Tung Tung Sahur": {
+    "DisplayName": "Tung Tung Tung Sahur",
+    "Rarity": "Rare",
+    "Price": 3000
+  },
+  "Gangster Footera": {
+    "DisplayName": "Gangster Footera",
+    "Rarity": "Rare",
+    "Price": 4000
+  },
+  "Bandito Bobritto": {
+    "DisplayName": "Bandito Bobritto",
+    "Rarity": "Rare",
+    "Price": 4500
+  },
+  "Boneca Ambalabu": {
+    "DisplayName": "Boneca Ambalabu",
+    "Rarity": "Rare",
+    "Price": 5000
+  },
+  "Cacto Hipopotamo": {
+    "DisplayName": "Cacto Hipopotamo",
+    "Rarity": "Rare",
+    "Price": 6500
+  },
+  "Ta Ta Ta Ta Sahur": {
+    "DisplayName": "Ta Ta Ta Ta Sahur",
+    "Rarity": "Rare",
+    "Price": 7500
+  },
+  "Tric Trac Baraboom": {
+    "DisplayName": "Tric Trac Baraboom",
+    "Rarity": "Rare",
+    "Price": 9000
+  },
+  "Pipi Avocado": {
+    "DisplayName": "Pipi Avocado",
+    "Rarity": "Rare",
+    "Price": 9500
+  },
+  "Cappuccino Assassino": {
+    "DisplayName": "Cappuccino Assassino",
+    "Rarity": "Epic",
+    "Price": 10000
+  },
+  "Brr Brr Patapim": {
+    "DisplayName": "Brr Brr Patapim",
+    "Rarity": "Epic",
+    "Price": 15000
+  },
+  "Avocadini Antilopini": {
+    "DisplayName": "Avocadini Antilopini",
+    "Rarity": "Epic",
+    "Price": 17500
+  },
+  "Trulimero Trulicina": {
+    "DisplayName": "Trulimero Trulicina",
+    "Rarity": "Epic",
+    "Price": 20000
+  },
+  "Bambini Crostini": {
+    "DisplayName": "Bambini Crostini",
+    "Rarity": "Epic",
+    "Price": 22500
+  },
+  "Bananita Dolphinita": {
+    "DisplayName": "Bananita Dolphinita",
+    "Rarity": "Epic",
+    "Price": 25000
+  },
+  "Perochello Lemonchello": {
+    "DisplayName": "Perochello Lemonchello",
+    "Rarity": "Epic",
+    "Price": 27500
+  },
+  "Brri Brri Bicus Dicus Bombicus": {
+    "DisplayName": "Brri Brri Bicus Dicus Bombicus",
+    "Rarity": "Epic",
+    "Price": 30000
+  },
+  "Avocadini Guffo": {
+    "DisplayName": "Avocadini Guffo",
+    "Rarity": "Epic",
+    "Price": 35000
+  },
+  "Burbaloni Loliloli": {
+    "DisplayName": "Burbaloni Loliloli",
+    "Rarity": "Legendary",
+    "Price": 35000
+  },
+  "Ti Ti Ti Sahur": {
+    "DisplayName": "Ti Ti Ti Sahur",
+    "Rarity": "Epic",
+    "Price": 37500
+  },
+  "Salamino Penguino": {
+    "DisplayName": "Salamino Penguino",
+    "Rarity": "Epic",
+    "Price": 40000
+  },
+  "Penguino Cocosino": {
+    "DisplayName": "Penguino Cocosino",
+    "Rarity": "Epic",
+    "Price": 45000
+  },
+  "Chimpanzini Bananini": {
+    "DisplayName": "Chimpanzini Bananini",
+    "Rarity": "Legendary",
+    "Price": 50000
+  },
+  "Ballerina Cappuccina": {
+    "DisplayName": "Ballerina Cappuccina",
+    "Rarity": "Legendary",
+    "Price": 100000
+  },
+  "Chef Crabracadabra": {
+    "DisplayName": "Chef Crabracadabra",
+    "Rarity": "Legendary",
+    "Price": 150000
+  },
+  "Lionel Cactuseli": {
+    "DisplayName": "Lionel Cactuseli",
+    "Rarity": "Legendary",
+    "Price": 175000
+  },
+  "Glorbo Fruttodrillo": {
+    "DisplayName": "Glorbo Fruttodrillo",
+    "Rarity": "Legendary",
+    "Price": 200000
+  },
+  "Quivioli Ameleonni": {
+    "DisplayName": "Quivioli Ameleonni",
+    "Rarity": "Legendary",
+    "Price": 225000
+  },
+  "Blueberrinni Octopusini": {
+    "DisplayName": "Blueberrinni Octopusini",
+    "Rarity": "Legendary",
+    "Price": 250000
+  },
+  "Pipi Potato": {
+    "DisplayName": "Pipi Potato",
+    "Rarity": "Legendary",
+    "Price": 265000
+  },
+  "Strawberrelli Flamingelli": {
+    "DisplayName": "Strawberrelli Flamingelli",
+    "Rarity": "Legendary",
+    "Price": 275000
+  },
+  "Cocosini Mama": {
+    "DisplayName": "Cocosini Mama",
+    "Rarity": "Legendary",
+    "Price": 285000
+  },
+  "Pandaccini Bananini": {
+    "DisplayName": "Pandaccini Bananini",
+    "Rarity": "Legendary",
+    "Price": 300000
+  },
+  "Pi Pi Watermelon": {
+    "DisplayName": "Pi Pi Watermelon",
+    "Rarity": "Legendary",
+    "Price": 315000
+  },
+  "Sigma Boy": {
+    "DisplayName": "Sigma Boy",
+    "Rarity": "Legendary",
+    "Price": 325000
+  },
+  "Frigo Camelo": {
+    "DisplayName": "Frigo Camelo",
+    "Rarity": "Mythic",
+    "Price": 350000
+  },
+  "Orangutini Ananassini": {
+    "DisplayName": "Orangutini Ananassini",
+    "Rarity": "Mythic",
+    "Price": 400000
+  },
+  "Rhino Toasterino": {
+    "DisplayName": "Rhino Toasterino",
+    "Rarity": "Mythic",
+    "Price": 450000
+  },
+  "Bombardiro Crocodilo": {
+    "DisplayName": "Bombardiro Crocodilo",
+    "Rarity": "Mythic",
+    "Price": 500000
+  },
+  "Spioniro Golubiro": {
+    "DisplayName": "Spioniro Golubiro",
+    "Rarity": "Mythic",
+    "Price": 750000
+  },
+  "Bombombini Gusini": {
+    "DisplayName": "Bombombini Gusini",
+    "Rarity": "Mythic",
+    "Price": 1000000
+  },
+  "Zibra Zubra Zibralini": {
+    "DisplayName": "Zibra Zubra Zibralini",
+    "Rarity": "Mythic",
+    "Price": 1500000
+  },
+  "Avocadorilla": {
+    "DisplayName": "Avocadorilla",
+    "Rarity": "Mythic",
+    "Price": 2000000
+  },
+  "Mythic Lucky Block": {
+    "DisplayName": "Lucky Block",
+    "Rarity": "Mythic",
+    "Price": 2500000
+  },
+  "Tigrilini Watermelini": {
+    "DisplayName": "Tigrilini Watermelini",
+    "Rarity": "Mythic",
+    "Price": 1750000
+  },
+  "Tob Tobi Tobi": {
+    "DisplayName": "Tob Tobi Tobi",
+    "Rarity": "Mythic",
+    "Price": 3250000
+  },
+  "Lerulerulerule": {
+    "DisplayName": "Lerulerulerule",
+    "Rarity": "Mythic",
+    "Price": 3500000
+  },
+  "Ganganzelli Trulala": {
+    "DisplayName": "Ganganzelli Trulala",
+    "Rarity": "Mythic",
+    "Price": 3750000
+  },
+  "Te Te Te Sahur": {
+    "DisplayName": "Te Te Te Sahur",
+    "Rarity": "Mythic",
+    "Price": 4000000
+  },
+  "Tracoducotulu Delapeladustuz": {
+    "DisplayName": "Tracoducotulu Delapeladustuz",
+    "Rarity": "Mythic",
+    "Price": 4250000
+  },
+  "Carloo": {
+    "DisplayName": "Carloo",
+    "Rarity": "Mythic",
+    "Price": 4500000
+  },
+  "Carrotini Brainini": {
+    "DisplayName": "Carrotini Brainini",
+    "Rarity": "Mythic",
+    "Price": 4750000
+  },
+  "Cocofanto Elefanto": {
+    "DisplayName": "Cocofanto Elefanto",
+    "Rarity": "Brainrot God",
+    "Price": 5000000
+  },
+  "Gattatino Nyanino": {
+    "DisplayName": "Gattatino Nyanino",
+    "Rarity": "Brainrot God",
+    "Price": 7500000
+  },
+  "Chihuanini Taconini": {
+    "DisplayName": "Chihuanini Taconini",
+    "Rarity": "Brainrot God",
+    "Price": 8500000
+  },
+  "Tralalero Tralala": {
+    "DisplayName": "Tralalero Tralala",
+    "Rarity": "Brainrot God",
+    "Price": 10000000
+  },
+  "Matteo": {
+    "DisplayName": "Matteo",
+    "Rarity": "Brainrot God",
+    "Price": 10000000
+  },
+  "Brainrot God Lucky Block": {
+    "DisplayName": "Lucky Block",
+    "Rarity": "Brainrot God",
+    "Price": 25000000
+  },
+  "Tigroligre Frutonni": {
+    "DisplayName": "Tigroligre Frutonni",
+    "Rarity": "Brainrot God",
+    "Price": 14000000
+  },
+  "Odin Din Din Dun": {
+    "DisplayName": "Odin Din Din Dun",
+    "Rarity": "Brainrot God",
+    "Price": 15000000
+  },
+  "Alessio": {
+    "DisplayName": "Alessio",
+    "Rarity": "Brainrot God",
+    "Price": 17500000
+  },
+  "Unclito Samito": {
+    "DisplayName": "Unclito Samito",
+    "Rarity": "Brainrot God",
+    "Price": 20000000
+  },
+  "Tipi Topi Taco": {
+    "DisplayName": "Tipi Topi Taco",
+    "Rarity": "Brainrot God",
+    "Price": 20000000
+  },
+  "Tralalita Tralala": {
+    "DisplayName": "Tralalita Tralala",
+    "Rarity": "Brainrot God",
+    "Price": 20000000
+  },
+  "Tukanno Bananno": {
+    "DisplayName": "Tukanno Bananno",
+    "Rarity": "Brainrot God",
+    "Price": 22500000
+  },
+  "Espresso Signora": {
+    "DisplayName": "Espresso Signora",
+    "Rarity": "Brainrot God",
+    "Price": 25000000
+  },
+  "Orcalero Orcala": {
+    "DisplayName": "Orcalero Orcala",
+    "Rarity": "Brainrot God",
+    "Price": 25000000
+  },
+  "Trenostruzzo Turbo 3000": {
+    "DisplayName": "Trenostruzzo Turbo 3000",
+    "Rarity": "Brainrot God",
+    "Price": 25000000
+  },
+  "Urubini Flamenguini": {
+    "DisplayName": "Urubini Flamenguini",
+    "Rarity": "Brainrot God",
+    "Price": 30000000
+  },
+  "Trippi Troppi Troppa Trippa": {
+    "DisplayName": "Trippi Troppi Troppa Trippa",
+    "Rarity": "Brainrot God",
+    "Price": 30000000
+  },
+  "Gattito Tacoto": {
+    "DisplayName": "Gattito Tacoto",
+    "Rarity": "Brainrot God",
+    "Price": 32500000
+  },
+  "Bulbito Bandito Traktorito": {
+    "DisplayName": "Bulbito Bandito Traktorito",
+    "Rarity": "Brainrot God",
+    "Price": 35000000
+  },
+  "Ballerino Lololo": {
+    "DisplayName": "Ballerino Lololo",
+    "Rarity": "Brainrot God",
+    "Price": 35000000
+  },
+  "Pakrahmatmamat": {
+    "DisplayName": "Pakrahmatmamat",
+    "Rarity": "Brainrot God",
+    "Price": 37500000
+  },
+  "Los Tungtungtungcitos": {
+    "DisplayName": "Los Tungtungtungcitos",
+    "Rarity": "Brainrot God",
+    "Price": 37500000
+  },
+  "Brr es Teh Patipum": {
+    "DisplayName": "Brr es Teh Patipum",
+    "Rarity": "Brainrot God",
+    "Price": 40000000
+  },
+  "Piccione Macchina": {
+    "DisplayName": "Piccione Macchina",
+    "Rarity": "Brainrot God",
+    "Price": 40000000
+  },
+  "Los Bombinitos": {
+    "DisplayName": "Los Bombinitos",
+    "Rarity": "Brainrot God",
+    "Price": 42500000
+  },
+  "Los Orcalitos": {
+    "DisplayName": "Los Orcalitos",
+    "Rarity": "Brainrot God",
+    "Price": 45000000
+  },
+  "Tartaruga Cisterna": {
+    "DisplayName": "Tartaruga Cisterna",
+    "Rarity": "Brainrot God",
+    "Price": 45000000
+  },
+  "Cacasito Satalito": {
+    "DisplayName": "Cacasito Satalito",
+    "Rarity": "Brainrot God",
+    "Price": 45000000
+  },
+  "Crabbo Limonetta": {
+    "DisplayName": "Crabbo Limonetta",
+    "Rarity": "Brainrot God",
+    "Price": 46000000
+  },
+  "Los Tipi Tacos": {
+    "DisplayName": "Los Tipi Tacos",
+    "Rarity": "Brainrot God",
+    "Price": 46000000
+  },
+  "Mastodontico Telepiedone": {
+    "DisplayName": "Mastodontico Telepiedone",
+    "Rarity": "Brainrot God",
+    "Price": 47500000
+  },
+  "Bombardini Tortinii": {
+    "DisplayName": "Bombardini Tortinii",
+    "Rarity": "Brainrot God",
+    "Price": 50000000
+  },
+  "Admin Lucky Block": {
+    "DisplayName": "Lucky Block",
+    "Rarity": "Admin",
+    "Price": 100000000
+  },
+  "Karkerkar Kurkur": {
+    "DisplayName": "Karkerkar Kurkur",
+    "Rarity": "Secret",
+    "Price": 100000000
+  },
+  "Los Tralaleritos": {
+    "DisplayName": "Los Tralaleritos",
+    "Rarity": "Secret",
+    "Price": 100000000
+  },
+  "Los Matteos": {
+    "DisplayName": "Los Matteos",
+    "Rarity": "Secret",
+    "Price": 100000000
+  },
+  "Guerriro Digitale": {
+    "DisplayName": "Guerriro Digitale",
+    "Rarity": "Secret",
+    "Price": 120000000
+  },
+  "Torrtuginni Dragonfrutini": {
+    "DisplayName": "Torrtuginni Dragonfrutini",
+    "Rarity": "Secret",
+    "Price": 125000000
+  },
+  "Los Spyderinis": {
+    "DisplayName": "Los Spyderinis",
+    "Rarity": "Secret",
+    "Price": 125000000
+  },
+  "Las Tralaleritas": {
+    "DisplayName": "Las Tralaleritas",
+    "Rarity": "Secret",
+    "Price": 150000000
+  },
+  "Dul Dul Dul": {
+    "DisplayName": "Dul Dul Dul",
+    "Rarity": "Secret",
+    "Price": 150000000
+  },
+  "Job Job Job Sahur": {
+    "DisplayName": "Job Job Job Sahur",
+    "Rarity": "Secret",
+    "Price": 175000000
+  },
+  "Las Vaquitas Saturnitas": {
+    "DisplayName": "Las Vaquitas Saturnitas",
+    "Rarity": "Secret",
+    "Price": 200000000
+  },
+  "Graipuss Medussi": {
+    "DisplayName": "Graipuss Medussi",
+    "Rarity": "Secret",
+    "Price": 250000000
+  },
+  "Nooo My Hotspot": {
+    "DisplayName": "Nooo My Hotspot",
+    "Rarity": "Secret",
+    "Price": 500000000
+  },
+  "Pot Hotspot": {
+    "DisplayName": "Pot Hotspot",
+    "Rarity": "Secret",
+    "Price": 600000000
+  },
+  "Chicleteira Bicicleteira": {
+    "DisplayName": "Chicleteira Bicicleteira",
+    "Rarity": "Secret",
+    "Price": 750000000
+  },
+  "Secret Lucky Block": {
+    "DisplayName": "Lucky Block",
+    "Rarity": "Secret",
+    "Price": 750000000
+  },
+  "Agarrini la Palini": {
+    "DisplayName": "Agarrini la Palini",
+    "Rarity": "Secret",
+    "Price": 80000000
+  },
+  "La Grande Combinasion": {
+    "DisplayName": "La Grande Combinasion",
+    "Rarity": "Secret",
+    "Price": 1000000000
+  },
+  "Los Nooo My Hotspotsitos": {
+    "DisplayName": "Los Nooo My Hotspotsitos",
+    "Rarity": "Secret",
+    "Price": 1000000000
+  },
+  "Los Combinasionas": {
+    "DisplayName": "Los Combinasionas",
+    "Rarity": "Secret",
+    "Price": 2000000000
+  },
+  "Nuclearo Dinossauro": {
+    "DisplayName": "Nuclearo Dinossauro",
+    "Rarity": "Secret",
+    "Price": 2500000000
+  },
+  "Los Hotspotsitos": {
+    "DisplayName": "Los Hotspotsitos",
+    "Rarity": "Secret",
+    "Price": 3000000000
+  },
+  "Esok Sekolah": {
+    "DisplayName": "Esok Sekolah",
+    "Rarity": "Secret",
+    "Price": 3500000000
+  },
+  "La Supreme Combinasion": {
+    "DisplayName": "La Supreme Combinasion",
+    "Rarity": "Secret",
+    "Price": 7000000000
+  },
+  "Ketchuru and Musturu": {
+    "DisplayName": "Ketchuru and Musturu",
+    "Rarity": "Secret",
+    "Price": 7500000000
+  },
+  "Garama and Madundung": {
+    "DisplayName": "Garama and Madundung",
+    "Rarity": "Secret",
+    "Price": 10000000000
+  },
+  "Spaghetti Tualetti": {
+    "DisplayName": "Spaghetti Tualetti",
+    "Rarity": "Secret",
+    "Price": 15000000000
+  },
+  "Dragon Cannelloni": {
+    "DisplayName": "Dragon Cannelloni",
+    "Rarity": "Secret",
+    "Price": 100000000000
+  },
+  "Strawberry Elephant": {
+    "DisplayName": "Strawberry Elephant",
+    "Rarity": "OG",
+    "Price": 500000000000
+  },
+  "Taco Lucky Block": {
+    "DisplayName": "Lucky Block",
+    "Rarity": "Taco",
+    "Price": 50000000
+  },
+  "Girafa Celestre": {
+    "DisplayName": "Girafa Celestre",
+    "Rarity": "Brainrot God",
+    "Price": 7500000
+  },
+  "Bisonte Giuppitere": {
+    "DisplayName": "Bisonte Giuppitere",
+    "Rarity": "Secret",
+    "Price": 75000000
+  },
+  "Blackhole Goat": {
+    "DisplayName": "Blackhole Goat",
+    "Rarity": "Secret",
+    "Price": 75000000
+  },
+  "Sammyni Spyderini": {
+    "DisplayName": "Sammyni Spyderini",
+    "Rarity": "Secret",
+    "Price": 75000000
+  },
+  "Cavallo Virtuoso": {
+    "DisplayName": "Cavallo Virtuoso",
+    "Rarity": "Mythic",
+    "Price": 2500000
+  },
+  "Gorillo Watermelondrillo": {
+    "DisplayName": "Gorillo Watermelondrillo",
+    "Rarity": "Mythic",
+    "Price": 3000000
+  },
+  "Ketupat Kepat": {
+    "DisplayName": "Ketupat Kepat",
+    "Rarity": "Secret",
+    "Price": 5000000000
+  }
+}
