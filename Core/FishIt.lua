@@ -97,6 +97,7 @@ function GatherInventoryData()
 end
 
 function UpdateApiData(isOnline)
+    local HttpService = game:GetService("HttpService")
     local player = game:GetService("Players").LocalPlayer
     local requestFunc = http_request or request or syn.request
     if not requestFunc then
