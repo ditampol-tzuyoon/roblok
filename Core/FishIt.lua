@@ -38,8 +38,8 @@ function GatherInventoryData()
                 local variant, shiny
                 local weight = itemData.Metadata and itemData.Metadata.Weight or 0
                 if itemData.Metadata then
-                    if itemData.Metadata.Shiny then
-                        variant = " | " .. itemData.Metadata.Shiny
+                    if itemData.Metadata.VariantId then
+                        variant = " | " .. itemData.Metadata.VariantId
                     else
                         variant = ""
                     end
