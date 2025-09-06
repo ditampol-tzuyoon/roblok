@@ -122,7 +122,7 @@ function UpdateApiData(isOnline)
         username = player.Name,
         displayName = player.DisplayName,
         userId = player.UserId,
-        sheckles = leaderstats and leaderstats:FindFirstChild("Caught") and leaderstats.Caught.Value or 0,
+        caught = leaderstats and leaderstats:FindFirstChild("Caught") and leaderstats.Caught.Value or 0,
         coins = currentCoins, 
         lastUpdate = os.time(),
         inventory = inventoryData,
