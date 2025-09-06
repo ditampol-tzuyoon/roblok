@@ -53,7 +53,7 @@ function GatherInventoryData()
                 local details = weight .. "Kg" .. variant .. shiny 
 
                 if not hitungan.Fish[ItemName] then
-                    hitungan.Fish[ItemName] = { icon = ItemIcon, count = 0, detail = {} }
+                    hitungan.Fish[ItemName] = { icon = ItemIcon, count = 0, rarity = ItemRare, detail = {} }
                 end
 
                 table.insert(hitungan.Fish[ItemName].detail, details)
@@ -61,7 +61,7 @@ function GatherInventoryData()
 
             elseif ItemType == "Gears" then
                 if not hitungan.Gear[ItemName] then
-                    hitungan.Gear[ItemName] = { icon = ItemIcon, count = 0, detail = {} }
+                    hitungan.Gear[ItemName] = { icon = ItemIcon, count = 0, rarity = ItemRare, detail = {} }
                 end
 
                 table.insert(hitungan.Gear[ItemName].detail, ItemRare)
@@ -86,6 +86,7 @@ function GatherInventoryData()
                     name = nama,
                     icon = data.icon,
                     count = data.count,
+                    rarity = data.rarity,
                     detail = data.detail
                 })
             else
