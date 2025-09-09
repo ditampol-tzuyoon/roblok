@@ -17,24 +17,19 @@ function GatherInventoryData()
     end
 
     local RarityMap = {
-        [1] = "Common",
-        [2] = "Uncommon",
-        [3] = "Rare",
-        [4] = "Epic",
-        [5] = "Legendary",
-        [6] = "Mythic",
-        [7] = "Secret",
+        [1] = "Common", [2] = "Uncommon", [3] = "Rare",
+        [4] = "Epic", [5] = "Legendary", [6] = "Mythic", [7] = "Secret",
     }
 
     for _, itemData in ipairs(inventory.Items) do
-        local fullData = ItemUtility.GetItemDataFromItemType("Fishes", itemData.Id)
+        local fullData = ItemUtility:GetItemData(itemData.Id)
         if fullData and fullData.Data then
             local ItemType = fullData.Data.Type
             local ItemName = fullData.Data.Name
             local ItemRare = RarityMap[fullData.Data.Tier] or "Unknown"
             local ItemIcon = fullData.Data.Icon
 
-            if ItemType == "Fishes" then
+            if ItemType == "Fishes" or ItemType == "EnchantStones" then
                 local variant, shiny
                 local weight = itemData.Metadata and itemData.Metadata.Weight or 0
                 if itemData.Metadata then
@@ -59,11 +54,44 @@ function GatherInventoryData()
                 table.insert(hitungan.Fish[ItemName].detail, details)
                 hitungan.Fish[ItemName].count = hitungan.Fish[ItemName].count + 1
 
-            elseif ItemType == "Gears" then
+            elseif ItemType == "Gears" then 
                 if not hitungan.Gear[ItemName] then
                     hitungan.Gear[ItemName] = { icon = ItemIcon, count = 0, rarity = ItemRare, detail = {} }
                 end
+                table.insert(hitungan.Gear[ItemName].detail, ItemRare)
+                hitungan.Gear[ItemName].count = hitungan.Gear[ItemName].count + 1
+            end
+        end
+    end
 
+    local fishingRodsCategory = inventory and inventory["Fishing Rods"]
+    if fishingRodsCategory and #fishingRodsCategory > 0 then
+        for _, itemData in ipairs(fishingRodsCategory) do
+            local fullData = ItemUtility:GetItemData(itemData.Id)
+            if fullData and fullData.Data and fullData.Data.Tier then
+                local ItemName = fullData.Data.Name
+                local ItemRare = RarityMap[fullData.Data.Tier] or "Unknown"
+                local ItemIcon = fullData.Data.Icon or "NONE"
+                if not hitungan.Gear[ItemName] then
+                    hitungan.Gear[ItemName] = { icon = ItemIcon, count = 0, rarity = ItemRare, detail = {} }
+                end
+                table.insert(hitungan.Gear[ItemName].detail, ItemRare)
+                hitungan.Gear[ItemName].count = hitungan.Gear[ItemName].count + 1
+            end
+        end
+    end
+
+    local baitsCategory = inventory and inventory.Baits
+    if baitsCategory or #baitsCategory > 0 then
+        for _, itemData in ipairs(baitsCategory) do
+            local fullData = ItemUtility:GetBaitData(itemData.Id)
+            if fullData and fullData.Data and fullData.Data.Tier then
+                local ItemName = fullData.Data.Name
+                local ItemRare = RarityMap[fullData.Data.Tier] or "Unknown"
+                local ItemIcon = fullData.Data.Icon or "NONE"
+                if not hitungan.Gear[ItemName] then
+                    hitungan.Gear[ItemName] = { icon = ItemIcon, count = 0, rarity = ItemRare, detail = {} }
+                end
                 table.insert(hitungan.Gear[ItemName].detail, ItemRare)
                 hitungan.Gear[ItemName].count = hitungan.Gear[ItemName].count + 1
             end
