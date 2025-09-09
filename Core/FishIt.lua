@@ -30,22 +30,12 @@ function GatherInventoryData()
             local ItemIcon = fullData.Data.Icon
 
             if ItemType == "Fishes" or ItemType == "EnchantStones" then
-                local variant, shiny
-                local weight = itemData.Metadata and itemData.Metadata.Weight or 0
-                if itemData.Metadata then
-                    if itemData.Metadata.VariantId then
-                        variant = " | " .. itemData.Metadata.VariantId
-                    else
-                        variant = ""
-                    end
-                    if itemData.Metadata.Shiny then
-                        shiny = " | Shiny"
-                    else
-                        shiny = ""
-                    end
-                end
 
-                local details = weight .. "Kg" .. variant .. shiny 
+                local weight = (itemData.Metadata and itemData.Metadata.Weight) or 0
+                local variant = (itemData.Metadata and itemData.Metadata.VariantId and " | " .. tostring(itemData.Metadata.VariantId)) or ""
+                local shiny = (itemData.Metadata and itemData.Metadata.Shiny and " | Shiny") or ""
+
+                local details = tostring(weight) .. "Kg" .. variant .. shiny
 
                 if not hitungan.Fish[ItemName] then
                     hitungan.Fish[ItemName] = { icon = ItemIcon, count = 0, rarity = ItemRare, detail = {} }
