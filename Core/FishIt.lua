@@ -145,7 +145,9 @@ function UpdateApiData(isOnline)
         coins = currentCoins, 
         lastUpdate = os.time(),
         inventory = inventoryData,
-        hasOnline = isOnline
+        hasOnline = isOnline,
+        avgMin = CoinCalculator.averageCoinsPerMinute or 0,
+        avgHour = CoinCalculator.averageCoinsPerHour or 0
     }
 
     local jsonPayload = HttpService:JSONEncode(payload)
