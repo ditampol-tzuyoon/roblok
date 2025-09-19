@@ -139,12 +139,8 @@ function UpdateApiData(isOnline)
 
     local avgMins, avgHours = 0, 0
     if CoinCalculator then
-        if CoinCalculator.averageCoinsPerMinute then
-            local avgMins = CoinCalculator.averageCoinsPerMinute or 0
-        end
-        if CoinCalculator.averageCoinsPerHour then
-            local avgHours = CoinCalculator.averageCoinsPerHour or 0
-        end
+        avgMins = CoinCalculator.averageCoinsPerMinute or 0
+        avgHours = CoinCalculator.averageCoinsPerHour or 0
     end
 
     local payload = {
