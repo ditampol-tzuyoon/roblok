@@ -137,6 +137,16 @@ function UpdateApiData(isOnline)
     local inventoryData = GatherInventoryData()
     local leaderstats = player:WaitForChild("leaderstats")
 
+    local avgMins, avgHours = 0, 0
+    if CoinCalculator then
+        if CoinCalculator.averageCoinsPerMinute then
+            local avgMins = CoinCalculator.averageCoinsPerMinute or 0
+        end
+        if CoinCalculator.averageCoinsPerHour then
+            local avgHours = CoinCalculator.averageCoinsPerHour or 0
+        end
+    end
+
     local payload = {
         username = player.Name,
         displayName = player.DisplayName,
@@ -146,8 +156,8 @@ function UpdateApiData(isOnline)
         lastUpdate = os.time(),
         inventory = inventoryData,
         hasOnline = isOnline,
-        avgMin = CoinCalculator.averageCoinsPerMinute or 0,
-        avgHour = CoinCalculator.averageCoinsPerHour or 0
+        avgMin = avgMins,
+        avgHour = avgHours
     }
 
     local jsonPayload = HttpService:JSONEncode(payload)
