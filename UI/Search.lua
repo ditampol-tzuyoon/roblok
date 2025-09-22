@@ -1609,7 +1609,7 @@ function RayfieldLibrary:CreateWindow(Settings)
     LoadingFrame.Subtitle.TextTransparency = 1
 
     if Settings.ShowText then
-        MPrompt.Title.Text = 'Show '..Settings.ShowText
+        MPrompt.Title.Text = Settings.ShowText
     end
 
     LoadingFrame.Version.TextTransparency = 1
