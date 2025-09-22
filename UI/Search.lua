@@ -1,5 +1,5 @@
 if debugX then
-    warn('Initialising Erine UI')
+    warn('Initialising Ohdear UI')
 end
 
 local function getService(name)
@@ -1617,7 +1617,7 @@ function RayfieldLibrary:CreateWindow(Settings)
     LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "Interface Suite"
 
     if Settings.LoadingTitle ~= "Erine Interface Suite" then
-        LoadingFrame.Version.Text = "Erine UI"
+        LoadingFrame.Version.Text = "UI Modified by Ohdear"
     end
 
     if Settings.Icon and Settings.Icon ~= 0 and Topbar:FindFirstChild('Icon') then
