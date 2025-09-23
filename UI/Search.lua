@@ -1176,9 +1176,9 @@ local function Hide(notify: boolean?)
     Debounce = true
     if notify then
         if useMobilePrompt then 
-            RayfieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping 'Show'.", Duration = 7, Image = 4400697855})
+            RayfieldLibrary:Notify({Title = "Minimize UI", Content = "Tap 'Ohdear Script' untuk Memunculkan Menu-nya kembali!", Duration = 7, Image = 4400697855})
         else
-            RayfieldLibrary:Notify({Title = "Interface Hidden", Content = `The interface has been hidden, you can unhide the interface by tapping {getSetting("General", "rayfieldOpen")}.`, Duration = 7, Image = 4400697855})
+            RayfieldLibrary:Notify({Title = "Interface Hidden", Content = `Untuk Memunculkan Menu-nya kembali, silahkan Tap {getSetting("General", "rayfieldOpen")}.`, Duration = 7, Image = 4400697855})
         end
     end
 
@@ -1616,8 +1616,8 @@ function RayfieldLibrary:CreateWindow(Settings)
     LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield"
     LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "Interface Suite"
 
-    if Settings.LoadingTitle ~= "Erine Interface Suite" then
-        LoadingFrame.Version.Text = "UI Modified by Ohdear"
+    if Settings.LoadingTitle ~= "OdBloxx UI" then
+        LoadingFrame.Version.Text = "UI Modified by OhdearBloxx"
     end
 
     if Settings.Icon and Settings.Icon ~= 0 and Topbar:FindFirstChild('Icon') then
@@ -1667,9 +1667,9 @@ function RayfieldLibrary:CreateWindow(Settings)
             while true do
                 task.wait(math.random(180, 600))
                 RayfieldLibrary:Notify({
-                    Title = "Rayfield Interface",
-                    Content = "Enjoying this UI library? Find it at sirius.menu/discord",
-                    Duration = 7,
+                    Title = "OhdearBloxx",
+                    Content = "Puas dengan Scriptnya? Gassken Upgrade Limit dan Lifetime",
+                    Duration = 10,
                     Image = 4370033185,
                 })
             end
