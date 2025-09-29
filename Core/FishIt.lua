@@ -1,3 +1,19 @@
+function GetRarityFromProbability(rawChance)
+    if not rawChance or rawChance <= 0 then return nil end
+
+    local oneInX = 1 / rawChance
+    
+    if oneInX >= 249999 then
+        return "Secret"
+    elseif oneInX >= 49999 then
+        return "Mythic"
+    elseif oneInX >= 4999 then
+        return "Legendary"
+    else
+        return nil
+    end
+end
+
 function GatherInventoryData()
     local result = { Fish={}, Gear={} }
     local hitungan = { Fish={}, Gear={} }
@@ -26,10 +42,18 @@ function GatherInventoryData()
         if fullData and fullData.Data then
             local ItemType = fullData.Data.Type
             local ItemName = fullData.Data.Name
-            local ItemRare = RarityMap[fullData.Data.Tier] or "Unknown"
             local ItemIcon = fullData.Data.Icon
+            local ItemRare
 
             if ItemType == "Fishes" or ItemType == "EnchantStones" then
+
+                if fullData.Probability and fullData.Probability.Chance then
+                    ItemRare = GetRarityFromProbability(fullData.Probability.Chance)
+                end
+
+                if not ItemRare then
+                    ItemRare = RarityMap[fullData.Data.Tier] or "Unknown"
+                end
 
                 local weight = (itemData.Metadata and itemData.Metadata.Weight) or 0
                 local variant = (itemData.Metadata and itemData.Metadata.VariantId and " | " .. tostring(itemData.Metadata.VariantId)) or ""
@@ -45,6 +69,7 @@ function GatherInventoryData()
                 hitungan.Fish[ItemName].count = hitungan.Fish[ItemName].count + 1
 
             elseif ItemType == "Gears" then 
+                ItemRare = RarityMap[fullData.Data.Tier] or "Unknown"
                 if not hitungan.Gear[ItemName] then
                     hitungan.Gear[ItemName] = { icon = ItemIcon, count = 0, rarity = ItemRare, detail = {} }
                 end
