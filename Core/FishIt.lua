@@ -140,7 +140,7 @@ function GatherInventoryData()
     return result
 end
 
-function UpdateApiData(isOnline, avgMins, avgHours)
+function UpdateApiData(isOnline)
     local HttpService = game:GetService("HttpService")
     local player = game:GetService("Players").LocalPlayer
     local requestFunc = http_request or request or syn.request
@@ -170,9 +170,7 @@ function UpdateApiData(isOnline, avgMins, avgHours)
         coins = currentCoins, 
         lastUpdate = os.time(),
         inventory = inventoryData,
-        hasOnline = isOnline,
-        avgMin = avgMins,
-        avgHour = avgHours
+        hasOnline = isOnline
     }
 
     local jsonPayload = HttpService:JSONEncode(payload)
