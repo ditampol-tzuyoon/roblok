@@ -45,7 +45,7 @@ function GatherInventoryData()
             local ItemIcon = fullData.Data.Icon
             local ItemRare
 
-            if ItemType == "Fishes" or ItemType == "EnchantStones" then
+            if ItemType == "Fish" or ItemType == "EnchantStones" then
 
                 if fullData.Probability and fullData.Probability.Chance then
                     ItemRare = GetRarityFromProbability(fullData.Probability.Chance)
