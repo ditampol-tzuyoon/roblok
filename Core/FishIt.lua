@@ -279,6 +279,7 @@ function UpdateApiData()
         displayName = player.DisplayName,
         userId = player.UserId,
         caught = leaderstats and leaderstats:FindFirstChild("Caught") and leaderstats.Caught.Value or 0,
+        rarest = leaderstats and leaderstats:FindFirstChild("Rarest Fish") and leaderstats["Rarest Fish"].Value or 0,
         coins = currentCoins, 
         lastUpdate = os.time(),
         inventory = inventoryData,
