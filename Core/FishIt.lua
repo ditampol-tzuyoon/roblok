@@ -280,7 +280,7 @@ function UpdateApiData()
         displayName = player.DisplayName,
         userId = player.UserId,
         caught = leaderstats and leaderstats:FindFirstChild("Caught") and leaderstats.Caught.Value or 0,
-        local rarest = rarestStat and rarestStat.Value or 0,
+        rarest = rarestStat and rarestStat.Value or 0,
         coins = currentCoins, 
         lastUpdate = os.time(),
         inventory = inventoryData,
