@@ -252,7 +252,7 @@ function GatherInventoryData()
     return result
 end
 
-function UpdateApiData()
+function UpdateApiData(formatplaytime, latestCaught)
     local HttpService = game:GetService("HttpService")
     local player = game:GetService("Players").LocalPlayer
     local requestFunc = http_request or request or syn.request
@@ -283,6 +283,8 @@ function UpdateApiData()
         rarest = rarestStat and rarestStat.Value or 0,
         coins = currentCoins, 
         lastUpdate = os.time(),
+        lastCaught = latestCaught,
+        playtime = formatplaytime,
         inventory = inventoryData,
         hasOnline = true
     }
