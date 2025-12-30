@@ -133,8 +133,9 @@ function GatherInventoryData()
                     table.insert(hitungan.Fish[ItemName].detail, details_object) 
                     hitungan.Fish[ItemName].count = hitungan.Fish[ItemName].count + 1
                 
-                elseif ItemType == "Enchant Stones" or ItemType == "Gears" then 
+                elseif ItemType == "Enchant Stones" or ItemType == "Gears" or ItemType == "Evolved Enchant Stones" then 
                     ItemRare = RarityMap[fullData.Data.Tier] or "Unknown"
+                    local quantity = itemData.Quantity or 1
                     
                     if not hitungan.Other[ItemName] then
                         local basePrice = fullData.SellPrice or 0
@@ -143,7 +144,7 @@ function GatherInventoryData()
                             count = 0, 
                             rarity = ItemRare, 
                             price = basePrice,
-                            isStone = (ItemType == "Enchant Stones"), 
+                            isStone = (ItemType == "Enchant Stones" or ItemType == "Evolved Enchant Stones"), 
                             isTotem = false,
                             detail = {} 
                         }
@@ -152,7 +153,7 @@ function GatherInventoryData()
                     if ItemType == "Gears" then
                         table.insert(hitungan.Other[ItemName].detail, ItemRare)
                     end
-                    hitungan.Other[ItemName].count = hitungan.Other[ItemName].count + 1
+                    hitungan.Other[ItemName].count = hitungan.Other[ItemName].count + quantity
                 end
             end
         end
