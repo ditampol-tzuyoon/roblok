@@ -15,8 +15,8 @@ function GetRarityFromProbability(rawChance)
 end
 
 function GatherInventoryData()
-    local result = { Fish={}, Rods={}, Bobbers={}, Potions={}, Other={} }
-    local hitungan = { Fish={}, Rods={}, Bobbers={}, Potions={}, Other={} }
+    local result = { Fish={}, Rods={}, Bobbers={}, Potions={}, Charms={}, Other={} }
+    local hitungan = { Fish={}, Rods={}, Bobbers={}, Potions={}, Charms={}, Other={} }
     
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local ItemUtility = require(ReplicatedStorage.Shared.ItemUtility)
@@ -188,6 +188,35 @@ function GatherInventoryData()
         end
     end
 
+    -- Loop khusus untuk kategori Charms
+    local charmsCategory = inventory and inventory.Charms
+    if charmsCategory then
+        for _, itemData in ipairs(charmsCategory) do
+            -- Menggunakan GetCharmData sesuai dekompilasi baris 81
+            local fullData = ItemUtility:GetCharmData(itemData.Id)
+
+            if fullData and fullData.Data then
+                local ItemName = fullData.Data.Name
+                local ItemIcon = fullData.Data.Icon or "NONE"
+                local ItemTier = fullData.Data.Tier or 1
+                local ItemRare = RarityMap[ItemTier] or "Unknown"
+                local quantity = itemData.Quantity or 1
+
+                if not hitungan.Charms[ItemName] then
+                    hitungan.Charms[ItemName] = { 
+                        icon = ItemIcon, 
+                        count = 0, 
+                        rarity = ItemRare, 
+                        price = fullData.SellPrice or 0,
+                        detail = {} 
+                    }
+                end
+
+                hitungan.Charms[ItemName].count = hitungan.Charms[ItemName].count + quantity
+            end
+        end
+    end
+
     local fishingRodsCategory = inventory and inventory["Fishing Rods"]
     if fishingRodsCategory and #fishingRodsCategory > 0 then
         for _, itemData in ipairs(fishingRodsCategory) do
@@ -273,7 +302,7 @@ function GatherInventoryData()
     for kategori, dataHitungan in pairs(hitungan) do
         for nama, data in pairs(dataHitungan) do
             
-            if kategori == "Fish" or kategori == "Rods" or kategori == "Bobbers" or kategori == "Other" or kategori == "Potions" then
+            if kategori == "Fish" or kategori == "Rods" or kategori == "Bobbers" or kategori == "Other" or kategori == "Potions" or kategori == "Charms" then
                 table.insert(result[kategori], {
                     name = nama,
                     icon = data.icon,
