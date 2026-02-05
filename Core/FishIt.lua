@@ -15,8 +15,8 @@ function GetRarityFromProbability(rawChance)
 end
 
 function GatherInventoryData()
-    local result = { Fish={}, Rods={}, Bobbers={}, Other={} }
-    local hitungan = { Fish={}, Rods={}, Bobbers={}, Other={} }
+    local result = { Fish={}, Rods={}, Bobbers={}, Potions={}, Other={} }
+    local hitungan = { Fish={}, Rods={}, Bobbers={}, Potions={}, Other={} }
     
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local ItemUtility = require(ReplicatedStorage.Shared.ItemUtility)
@@ -159,6 +159,35 @@ function GatherInventoryData()
         end
     end
 
+    -- Loop khusus untuk kategori Potion
+    local potionsCategory = inventory and inventory.Potions
+    if potionsCategory then
+        for _, itemData in ipairs(potionsCategory) do
+            -- Menggunakan GetPotionData sesuai dekompilasi baris 193
+            local fullData = ItemUtility:GetPotionData(itemData.Id)
+
+            if fullData and fullData.Data then
+                local ItemName = fullData.Data.Name
+                local ItemIcon = fullData.Data.Icon or "NONE"
+                local ItemTier = fullData.Data.Tier or 1
+                local ItemRare = RarityMap[ItemTier] or "Unknown"
+                local quantity = itemData.Quantity or 1
+
+                if not hitungan.Potions[ItemName] then
+                    hitungan.Potions[ItemName] = { 
+                        icon = ItemIcon, 
+                        count = 0, 
+                        rarity = ItemRare, 
+                        price = fullData.SellPrice or 0,
+                        detail = {} 
+                    }
+                end
+
+                hitungan.Potions[ItemName].count = hitungan.Potions[ItemName].count + quantity
+            end
+        end
+    end
+
     local fishingRodsCategory = inventory and inventory["Fishing Rods"]
     if fishingRodsCategory and #fishingRodsCategory > 0 then
         for _, itemData in ipairs(fishingRodsCategory) do
@@ -244,7 +273,7 @@ function GatherInventoryData()
     for kategori, dataHitungan in pairs(hitungan) do
         for nama, data in pairs(dataHitungan) do
             
-            if kategori == "Fish" or kategori == "Rods" or kategori == "Bobbers" or kategori == "Other" then
+            if kategori == "Fish" or kategori == "Rods" or kategori == "Bobbers" or kategori == "Other" or kategori == "Potions" then
                 table.insert(result[kategori], {
                     name = nama,
                     icon = data.icon,
