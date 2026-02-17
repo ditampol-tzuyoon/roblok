@@ -301,6 +301,10 @@ function GatherInventoryData()
 
     for kategori, dataHitungan in pairs(hitungan) do
         for nama, data in pairs(dataHitungan) do
+            local finalDetail = data.detail
+            if kategori == "Other" then
+                finalDetail = {}
+            end
             
             if kategori == "Fish" or kategori == "Rods" or kategori == "Bobbers" or kategori == "Other" or kategori == "Potions" or kategori == "Charms" then
                 table.insert(result[kategori], {
@@ -311,7 +315,7 @@ function GatherInventoryData()
                     price = data.price,
                     isStone = data.isStone or false, 
                     isTotem = data.isTotem or false,
-                    detail = data.detail
+                    detail = finalDetail
                 })
             else
                 table.insert(result[kategori], { name = nama, count = data })
