@@ -325,6 +325,53 @@ function GatherInventoryData()
     return result
 end
 
+function GetCurrentRodEnchant()
+
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local ReplionClient = require(ReplicatedStorage.Packages.Replion).Client
+    local ItemUtility = require(ReplicatedStorage.Shared.ItemUtility)
+    
+    local StatsEnc1 = "None"
+    local StatsEnc2 = "None"
+
+    local PlayerData = ReplionClient:WaitReplion("Data")
+    if not PlayerData then return StatsEnc1, StatsEnc2 end
+
+    local equippedItems = PlayerData:Get("EquippedItems")
+    if not equippedItems or not equippedItems[1] then return StatsEnc1, StatsEnc2 end
+    local equippedUUID = equippedItems[1]
+
+    local inventory = PlayerData:Get("Inventory")
+    if not (inventory and inventory["Fishing Rods"]) then return StatsEnc1, StatsEnc2 end
+
+    local equippedItemObject = nil
+    for _, item in ipairs(inventory["Fishing Rods"]) do
+        if item.UUID == equippedUUID then
+            equippedItemObject = item
+            break
+        end
+    end
+
+    if equippedItemObject and equippedItemObject.Metadata then
+        if equippedItemObject.Metadata.EnchantId then
+            local enchant1 = ItemUtility:GetEnchantData(equippedItemObject.Metadata.EnchantId)
+            if enchant1 and enchant1.Data then
+                StatsEnc1 = enchant1.Data.Name
+            end
+        end
+        
+        if equippedItemObject.Metadata.EnchantId2 then
+            local enchant2 = ItemUtility:GetEnchantData(equippedItemObject.Metadata.EnchantId2)
+            if enchant2 and enchant2.Data then
+                StatsEnc2 = enchant2.Data.Name
+            end
+        end
+
+    end
+    
+    return StatsEnc1, StatsEnc2
+end
+
 function UpdateApiData(formatplaytime, latestCaught)
     local HttpService = game:GetService("HttpService")
     local player = game:GetService("Players").LocalPlayer
@@ -339,34 +386,55 @@ function UpdateApiData(formatplaytime, latestCaught)
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local ReplionClient = require(ReplicatedStorage.Packages.Replion).Client
     local PlayerData = ReplionClient:GetReplion("Data")
+    
+    -- 1. Ambil data Coins dari Replion
     local currentCoins = 0
     if PlayerData then
         currentCoins = PlayerData:Get("Coins") or 0
     end
-    
-    local inventoryData = GatherInventoryData()
-    local leaderstats = player:WaitForChild("leaderstats")
-    local rarestStat = leaderstats and leaderstats:FindFirstChild("Rarest Fish")
 
+    -- 2. Ambil data Enchant (Sesuai Versi Terbaik)
+    local enc1, enc2 = GetCurrentRodEnchant()
+
+    -- 3. Ambil data dari Leaderstats & Attributes
+    local inventoryData = GatherInventoryData()
+    local leaderstats = player:FindFirstChild("leaderstats")
+    local playerAttributes = player:GetAttributes()
+
+    -- 4. Susun Struktur playerStats sesuai catatan
+    local playerStats = {
+        caught = leaderstats and leaderstats:FindFirstChild("Caught") and leaderstats.Caught.Value or 0,
+        rarest = leaderstats and leaderstats:FindFirstChild("Rarest Fish") and leaderstats["Rarest Fish"].Value or 0,
+        coins = currentCoins,
+        location = playerAttributes["LocationName"] or "Unknown",
+        rod = {
+            name = playerAttributes["FishingRod"] or "N/A",
+            enchantSlot1 = enc1,
+            enchantSlot2 = enc2
+        }
+    }
+
+    -- 5. Susun Payload Akhir
     local payload = {
         username = player.Name,
         displayName = player.DisplayName,
         userId = player.UserId,
-        caught = leaderstats and leaderstats:FindFirstChild("Caught") and leaderstats.Caught.Value or 0,
-        rarest = rarestStat and rarestStat.Value or 0,
-        coins = currentCoins, 
+        playerStats = playerStats,
         lastUpdate = os.time(),
         lastCaught = latestCaught,
         playtime = formatplaytime,
         inventory = inventoryData,
         hasOnline = true
     }
-
+    
     local jsonPayload = HttpService:JSONEncode(payload)
     local requestData = {
         Url = DataAPI,
         Method = "POST",
-        Headers = {["Content-Type"] = "application/json", ["X-Access-Key"] = accessKey},
+        Headers = {
+            ["Content-Type"] = "application/json", 
+            ["X-Access-Key"] = accessKey
+        },
         Body = jsonPayload
     }
 
